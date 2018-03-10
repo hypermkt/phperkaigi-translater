@@ -17,17 +17,20 @@
     <template v-for="word in words">
       <div class="logo-object active" :class="word.class" @click="push(word)"></div>
     </template>
+    <button @click="addSpace()">スペース</button>
 
     <br>
     <br>
     答え
     <template v-for="word in items">
-      <div class="logo-object active" :class="word.class" @click="push(word)"></div>
+      <span v-if="word.word == 'space'">&nbsp;&nbsp;</span>
+      <span v-else class="logo-object active" :class="word.class" @click="push(word)"></span>
     </template>
     <br>
     <br>
     <template v-for="word in items">
-      {{ word.word }}
+      <span v-if="word.word == 'space'">&nbsp;&nbsp;</span>
+      <span v-else>{{ word.word }}</span>
     </template>
 </div>
 
@@ -78,6 +81,9 @@
       methods: {
         push: function(word) {
           this.items.push(word)
+        },
+        addSpace: function() {
+          this.items.push({ word: 'space' })
         }
       }
     });
