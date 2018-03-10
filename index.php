@@ -1,5 +1,45 @@
 <?php
 
+$words = [
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    'f',
+    'g',
+    'h',
+    'i',
+    'j',
+    'k',
+    'l',
+    'm',
+    'n',
+    'o',
+    'p',
+    'q',
+    'r',
+    's',
+    't',
+    'u',
+    'v',
+    'w',
+    'x',
+    'y',
+    'z',
+    '0',
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+];
+
+
 ?>
 
 <!DOCTYPE html>
@@ -11,6 +51,10 @@
 
 </head>
 <body>
+
+<h1>PHPerKaigiトランスレーター</h1>
+
+<h2>復号化</h2>
 
   <div id="app">
     記号をクリックしてください
@@ -88,6 +132,29 @@
       }
     });
   </script>
+
+    <hr />
+
+<h2>暗号化</h2>
+小文字で書いてね
+
+<form action="./index.php" method="post">
+    <input type="text" name="words" value="">
+    <input type="submit" value="暗号化">
+</form>
+
+<?php
+
+if ($_POST) {
+    echo $_POST['words'] . '<br />';
+    $words = str_split($_POST['words']);
+    foreach($words as $word) {
+        $str = "<div class='logo-object active _{$word}'></div>";
+        echo $str;
+    }
+}
+
+?>
 
 </body>
 </html>
