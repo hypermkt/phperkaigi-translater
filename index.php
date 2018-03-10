@@ -52,7 +52,7 @@ $words = [
 </head>
 <body>
 
-<h1>PHPerKaigiトランスレーター</h1>
+<h1>PHPerKaigi ロゴ画像暗号トランスレーター</h1>
 
 <h2>復号化</h2>
 
