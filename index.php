@@ -146,8 +146,9 @@ $words = [
 <?php
 
 if ($_POST) {
-    echo $_POST['words'] . '<br />';
-    $words = str_split($_POST['words']);
+    $postedWords = htmlspecialchars($_POST['words'], ENT_QUOTES, 'UTF-8');
+    echo $postedWords . '<br />';
+    $words = str_split($postedWords);
     foreach($words as $word) {
         $str = "<div class='logo-object active _{$word}'></div>";
         echo $str;
